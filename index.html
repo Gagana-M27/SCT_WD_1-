@@ -1,0 +1,306 @@
+
+<nav id="navbar">
+  <a class="logo" href="#home">NO<span>V</span>A.</a>
+
+  <button class="menu-btn" id="menuBtn"
+    aria-label="Toggle navigation"
+    aria-expanded="false">
+    ☰
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #101020;
+    color: white;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    z-index: 1000;
+    transition: 0.3s;
+  }
+
+  nav.scrolled {
+    background: #19192e;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    box-shadow: 0 4px 20px #0005;
+  }
+
+  .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .logo span {
+    color: #53e5ff;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #53e5ff;
+    border-bottom-color: #53e5ff;
+  }
+
+  .menu-btn {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 120px 8% 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 span {
+    color: #53e5ff;
+  }
+
+  .hero p {
+    color: #c3c3d5;
+    line-height: 1.8;
+    max-width: 500px;
+  }
+
+  .hero a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #53e5ff;
+    color: #101020;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .orb {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #53e5ff, #7752ff 55%, #101020);
+    box-shadow: 0 0 80px #7752ff66;
+  }
+
+  section:not(.hero) {
+    padding: 90px 8%;
+    scroll-margin-top: 70px;
+  }
+
+  section h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .card {
+    padding: 28px;
+    background: #1b1b30;
+    border: 1px solid #ffffff15;
+    border-radius: 14px;
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    border-color: #53e5ff;
+  }
+
+  section p {
+    color: #c3c3d5;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 16px 5%;
+    }
+
+    .menu-btn {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 22px;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      background: #101020;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .hero {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .orb {
+      width: 220px;
+      height: 220px;
+    }
+
+    .cards {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<body>
+
+  <section class="hero" id="home">
+    <div>
+      <h1>Build Your <span>Digital Future</span></h1>
+      <p>
+        We create modern websites and digital experiences
+        that help your business grow.
+      </p>
+      <a href="#services">Explore Services</a>
+    </div>
+
+    <div class="orb"></div>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <p>Creative solutions for your digital needs.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Responsive and modern websites for every device.</p>
+      </div>
+
+      <div class="card">
+        <h3>UI/UX Design</h3>
+        <p>Simple, attractive, and user-friendly designs.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digital Solutions</h3>
+        <p>Smart solutions to improve your online presence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      NOVA focuses on creating beautiful, responsive,
+      and user-friendly digital experiences.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have a project in mind? Let's create something amazing.</p>
+    <p>Email: hello@nova.example</p>
+  </section>
+
+</body>
+<script>
+  const navbar = document.getElementById("navbar");
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  // Change navbar style while scrolling
+  window.addEventListener("scroll", function () {
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
+  });
+
+  // Open and close mobile menu
+  menuBtn.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("open");
+
+    menuBtn.textContent = isOpen ? "✕" : "☰";
+    menuBtn.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close menu after selecting a link
+  document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("open");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
+    .nav-links {
+      z-index: 1001;
+    }
+
+    .hero {
+      padding-top: 130px;
+    }
+
+    section:not(.hero) {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
